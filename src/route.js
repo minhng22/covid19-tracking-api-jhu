@@ -4,4 +4,5 @@ const router = Router()
 
 router.get("/country", country_controller.show)
 
+router.get("/case")
 export default router
