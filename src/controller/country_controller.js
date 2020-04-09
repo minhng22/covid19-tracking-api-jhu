@@ -7,3 +7,7 @@ export const show = async (req, res) => {
     })
 }
 
+export const showCases = async (req, res) => {
+    
+}
+
