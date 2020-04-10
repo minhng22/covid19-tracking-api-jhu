@@ -7,7 +7,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-const port = 8090 // Default port to listen
+const port = process.env.PORT || 8090 // Default port to listen
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -20,7 +20,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    res.json('Main view.')
+    res.send('Main view.')
 })
 
 /*
