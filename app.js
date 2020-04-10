@@ -19,6 +19,10 @@ app.listen(port, () => {
     console.log(`server started at http://localhost:${port}`)
 });
 
+app.get("/", (req, res) => {
+    res.json('Main view.')
+})
+
 /*
 ** Route import
 */
