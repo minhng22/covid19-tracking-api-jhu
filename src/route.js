@@ -1,9 +1,10 @@
 import { Router } from 'express'
-import {country_controller} from './controller/index'
+import {case_controller, country_controller} from './controller/index'
 const router = Router()
 
 router.get("/country", country_controller.show)
-router.get("/countr/:countryName/case", country_controller.show)
 
-router.get("/state/:stateName/case")
+router.get("/case", case_controller.show)
+router.get("/case-analyze", case_controller.analyze)
+
 export default router

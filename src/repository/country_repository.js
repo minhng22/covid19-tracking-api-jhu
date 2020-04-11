@@ -1,16 +1,9 @@
-import {Schema, model} from 'mongoose'
 import country_model from '../model/index'
 
-let country_MG_schema = new Schema({
-    name: {type: String}
-})
-let country = model('Country', country_MG_schema, 'Country')
-let country_death = model('CountryDeath', country_MG_schema, 'CountryDeath')
-
 export const get = (params) => {
-    return country.find(params)
+    return country_model.country_MG_model.find(params).lean()
 }
 
 export const d_get = (params) => {
-    return country_death.find(params)
+    return country_model.country_death_MG_model.find(params).lean()
 }

@@ -9,7 +9,8 @@ dotenv.config()
 const app = express()
 const port = process.env.PORT || 8090 // Default port to listen
 
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 /*
 ** Start the Express server
