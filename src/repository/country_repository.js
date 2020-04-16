@@ -1,9 +1,5 @@
-import country_model from '../model/index'
+import {country_model} from '../model/index'
 
-export const get = (params) => {
-    return country_model.country_MG_model.find(params).lean()
-}
-
-export const d_get = (params) => {
-    return country_model.country_death_MG_model.find(params).lean()
+export const get = (death_case = false, params) => {
+    return death_case ? country_model.country_death_MG_model.find(params).lean(): country_model.country_MG_model.find(params).lean()
 }

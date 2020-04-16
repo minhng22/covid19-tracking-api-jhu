@@ -1,4 +1,4 @@
-import {country_repository} from '../repository/index'
+import {county_repository} from '../repository/index'
 
 export const show = (req, res) => {
     const params = {}
@@ -14,7 +14,7 @@ export const show = (req, res) => {
         death_case = true
     }
 
-    country_repository.get(death_case, params).exec((err, countries) => {
+    county_repository.get(death_case, params).exec((err, countries) => {
         res.status(200).json(countries)
     })
 }
