@@ -4,6 +4,8 @@ import {database_middleware} from './src/middleware/index'
 import router from './src/route'
 import dotenv from 'dotenv'
 
+const cors = require('cors')
+
 dotenv.config()
 
 const app = express()
@@ -11,7 +13,7 @@ const port = process.env.PORT || 8090 // Default port to listen
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(cors())
 
 app.use((req, res, next)=> {
     res.header("Access-Control-Allow-Origin", "*");
