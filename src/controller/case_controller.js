@@ -25,7 +25,6 @@ export const show = async (req, res) => {
                 'state_id': req.query.territory_id[i]
             }).exec().then(async (counties) => {
                 let state_data_full = []
-                console.log(counties)
 
                 for (let county of counties) {
                     await case_repository.get(death_case, {
@@ -64,6 +63,7 @@ export const analyze = async(req, res) => {
                     let c_return = lh.sort_time_stampt_dict(lh.make_dict(c, 'timestamp', 'no'))
                     
                     if (req.query.DAILY_NEW_CASE == 'TRUE') {
+                        console.log('Truee Daily new case ', req.query.DAILY_NEW_CASE)
                         c_return = lh.new_case(c_return)
                     }
                     
@@ -90,7 +90,6 @@ export const analyze = async(req, res) => {
                     'state_id': req.query.territory_id[i]
                 }).exec().then(async (counties) => {
                     let state_data = {}
-                    console.log(counties)
     
                     for (let county of counties) {
                         await case_repository.get(death_case, {
