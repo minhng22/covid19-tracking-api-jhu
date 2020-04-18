@@ -2,7 +2,7 @@ import {case_repository, county_repository} from '../repository/index'
 import {logic_helper as lh} from '../helper/index'
 
 export const show = async (req, res) => {
-    const data = []
+    let data = []
     let death_case = false 
 
     if (req.query.DEATH_CASE && req.query.DEATH_CASE == 'TRUE') {
@@ -46,8 +46,8 @@ export const show = async (req, res) => {
 }
 
 export const analyze = async(req, res) => {
-    const data = []
-    const death_case = false 
+    let data = []
+    let death_case = false 
 
     if (req.query.DEATH_CASE && req.query.DEATH_CASE == 'TRUE') {
         death_case = true
